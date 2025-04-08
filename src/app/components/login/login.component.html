@@ -1,0 +1,78 @@
+<div class="mainBox">
+    <div class="wrapper">
+        <div class="form-header">
+            <div class="titles">
+                <div class="title-login">Inicio</div>
+                <div class="title-register">Registro</div>
+            </div>
+        </div>
+        <!-- LOGIN FORM -->
+        <form action="#" class="login-form" autocomplete="off" [formGroup]="formLogin" (submit)="logIn()">
+            <div class="input-box">
+                <input type="text" class="input-field" id="log-email" formControlName="email" required>
+                <label for="log-email" class="label">Email</label>
+                <i class='bx bx-envelope icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" id="log-pass" formControlName="password" required>
+                <label for="log-pass" class="label">Contraseña</label>
+                <i class='bx bx-lock-alt icon'></i>
+            </div>
+            <div class="form-cols">
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+            <div class="input-box">
+                <button class="btn-submit" id="SignInBtn" [disabled]="!formLogin.valid" >Iniciar <i class='bx bx-log-in'></i></button>
+            </div>
+            <div class="switch-form">
+                <span>¿no tienes cuenta? <a (click)="registerFunction()">Registrate</a></span>
+            </div>
+        </form>
+        <!-- REGISTER FORM -->
+        <form action="#" class="register-form" autocomplete="off" [formGroup]="formRegister" (submit)="signIn()">
+            <div class="input-box">
+                <input type="text" class="input-field" id="reg-name" formControlName="name" required>
+                <label for="reg-name" class="label">Nombre</label>
+                <i class='bx bx-user icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" id="reg-name" formControlName="lastName" required>
+                <label for="reg-name" class="label">Apellido</label>
+                <i class='bx bx-user icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" id="reg-name" formControlName="age" required>
+                <label for="reg-name" class="label">Edad</label>
+                <i class='bx bx-user icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" class="input-field" id="reg-email" formControlName="email" required>
+                <label for="reg-email" class="label">Email</label>
+                <i class='bx bx-envelope icon'></i>
+            </div>
+            <div class="input-box">
+                <input class="input-file" id="input_file" type="file">
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" id="reg-pass" formControlName="password" required>
+                <label for="reg-pass" class="label">Contraseña</label>
+                <i class='bx bx-lock-alt icon'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" class="input-field" id="reg-pass" formControlName="repassword" required>
+                <label for="reg-pass" class="label">Repetir contraseña</label>
+                <i class='bx bx-lock-alt icon'></i>
+            </div>
+            <div class="input-box">
+                <button class="btn-submit" id="SignUpBtn" [disabled]="!formRegister.valid" >Registrarse<i class='bx bx-user-plus'></i></button>
+            </div>
+            <div class="switch-form">
+                <span>¿Ya tienes una cuenta? <a (click)="loginFunction()">Iniciar</a></span>
+            </div>
+        </form>
+    </div>
+
+</div>

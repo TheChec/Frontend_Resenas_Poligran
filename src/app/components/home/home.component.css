@@ -1,0 +1,309 @@
+.firstSeccion, .secondSeccion, .thirtSeccion{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 60px;
+}
+.firstSeccion{
+    margin: 100px 0 0 0 ;
+    flex-direction: row;
+}
+.secondSeccion, .thirtSeccion{
+    flex-direction: column;
+}
+.contenedores_grandes img{
+    width: clamp(200px, 50vw, 650px);
+    object-fit: cover;
+}
+.contenedores_grandes h2{
+    margin: 20px 0;
+}
+.contenedores_grandes p{
+    margin: 20px 0;
+}
+.contenedores_titulo{
+    width: 100%;
+    border-bottom: 3px solid var(--c1);
+}
+.contenedores_titulo h2{
+    margin: 20px 0;
+}
+.contenedores_categoria_circulos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px ;
+    scrollbar-width: none;
+}
+.carta{
+    margin: 30px 10px;
+    width: clamp(200px,50vw, 300px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+.carta:hover {
+    transition: all .5s ease;
+    transform: translate(-10px, -10px);
+  }
+  
+.circulo {
+    width: clamp(150px, 20vw, 180px);
+    aspect-ratio: 1 / 1;
+    border: 2px solid var(--c1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+
+    border-radius: 50%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+  
+  .circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contenedores_productos{
+    display: flex;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    flex-flow: wrap row;
+    gap: 30px;
+    padding: 20px;
+  }
+  .carta_producto{
+    display: flex;
+    flex-direction: column;
+    width: clamp(210px, 50vw, 260px);
+    height: clamp(310px, 50vh, 390px);
+    box-sizing: border-box;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 10px 20px;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .carta_imagen{
+    border-radius: 10px;
+    width: 100%;
+    height: clamp(210px, 50vh, 230px);
+    background-color: cadetblue;
+  }
+  .carta_imagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .noItems{
+    width: 100%;
+    margin: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.noItems img{
+    width: clamp(50px, 25vw, 80px);
+    object-fit: contain;
+}
+.red{
+    margin: 10px 0;
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    overflow: hidden;
+    position: fixed;
+}
+.boxModal{
+    width: 80vw;
+    background-color: var(--w);
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: content-box;
+    gap: 30px;
+    transition: all .5s ease;
+}
+  /* Animación al abrir */
+.animacion_modal {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: mostrarModal 0.4s forwards ease-out;
+  }
+  
+  @keyframes mostrarModal {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación al cerrar */
+  .ocultar_modal {
+    animation: ocultarModal 0.3s forwards ease-in;
+  }
+  
+  @keyframes ocultarModal {
+    to {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+.closeOption{
+    width: 100%;
+    text-align: end;
+    font-weight: 800;
+}
+.closeOption p{
+    cursor: pointer;
+}
+
+.publiBody{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+.publiImg{
+    width: 60%;
+    height: 30vw;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.publiImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.carta_info{
+    display: flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    gap: 10px;
+    flex-direction: column;
+}
+.publiInfo {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.comentarios textarea{
+    width: 100%;
+    resize: none;
+}
+
+.select{
+    width: 150px;
+    margin: 20px 0;
+}
+
+.caja {
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0;
+    padding: 10px 0;
+    margin-top: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 150px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Chrome, Edge y otros basados en Webkit */
+  .caja::-webkit-scrollbar {
+    display: none;
+  }
+  
+.comentario{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 5px 2px;
+    gap: 10px;
+}
+.comentarioIMG {
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--b);
+    box-sizing: border-box;
+}
+
+.comentarioIMG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comentarioVerdadero{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+body.no-scroll {
+    overflow: hidden;
+    padding-right: 15px; /* Previene el salto horizontal cuando desaparece el scroll */
+  }
+  
+@media (max-width: 800px) {
+    .contenedores_grandes img{
+        display: none;
+    }
+    .contenedores_categoria_circulos{
+        gap: 20px;
+    }
+    .carta{
+        margin: 10px
+    }
+    .publiBody{
+        flex-flow: wrap row;
+        overflow: auto;
+    }
+    .publiImg, .publiInfo{
+        width: 100%;
+    }
+    .boxModal{
+        overflow: auto;
+        height: 80vh;
+    }
+ }
+   

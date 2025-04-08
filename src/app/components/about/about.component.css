@@ -1,0 +1,51 @@
+.firstSeccion, .secondSeccion, .thirtSeccion{
+    width: 75%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 60px;
+}
+.firstSeccion{
+    flex-direction: row;
+}
+.margin{
+    margin: 100px auto 0 auto ;
+
+}
+
+.contenedores_grandes img{
+    width: clamp(200px, 50vw, 400px);
+    object-fit: cover;
+    border-radius: 25px;
+}
+.contenedores_grandes h2{
+    margin: 20px 0;
+}
+.contenedor_inputs form{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 0;
+}
+.contenedor_inputs form div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+input, textarea{
+    outline: none;
+    width: 100%;
+    border: none;
+    width: 100%;
+    border-bottom: 2px solid var(--b);
+}
+textarea{
+    height: 150px;
+}

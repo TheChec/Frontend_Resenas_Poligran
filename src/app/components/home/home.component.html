@@ -1,0 +1,120 @@
+
+
+<div class="modal" id="modal">
+    <div class="boxModal" id="boxModal">
+        <div class="closeOption">
+            <p (click)="closeModal('modal', 'boxModal')">X</p>  
+          </div>
+        <h2>Publicación</h2>
+        <div class="publiBody">
+            <div class="publiImg">
+                <img src="http://localhost:3000/public/images/{{selectProduct.img}}" alt="">
+            </div>
+            <div class="publiInfo">
+                <h2>{{selectProduct.name}}</h2>
+                <h4>Categoría: {{ getNombreCategoria(selectProduct.category) }}</h4>
+                <h4>¡Calificación: {{selectProduct.rating}}!</h4>
+                <h4>¡Personas que calificaron: {{selectProduct.people_who_rate}}!</h4>
+                <h4>¡Cantidad de reseñas: {{selectProduct.reviews?.length}}!</h4>
+                <p>{{selectProduct.description}}</p>
+                <div class="comentarios">
+                    <form *ngIf="user._id != ''" [formGroup]="formAddReview" (submit)="putReview()">
+                        <textarea formControlName="comment"></textarea>
+                        <ng-select 
+                        class="select"
+                        [items]="stars"
+                        bindLabel="nombre"
+                        bindValue="cantidad"
+                        formControlName="stars"
+                        placeholder="Estrellas">
+                        </ng-select>
+                        <button class="green" [disabled]="!this.formAddReview.valid">Comentar</button>
+                    </form>
+                    <div class="caja">
+                        <div class="comentario" *ngFor="let comment of selectProduct.reviews">
+                            <div class="comentarioIMG">
+                                <img src="http://localhost:3000/public/images/{{comment.img_user}}" alt="">
+                            </div>
+                            <div class="comentarioVerdadero">
+                                <h5>{{comment.name_user}}</h5>
+                                <h5>{{comment.comment}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="firstSeccion">
+    <div class="contenedores_grandes">
+        <h2>Bienvenido a nuestro software de reseñas online para productos</h2>
+        <p>una plataforma intuitiva y moderna diseñada para ayudarte a descubrir, 
+            calificar y compartir opiniones reales sobre una amplia variedad de productos. </p>
+        <button *ngIf="user._id == ''" (click)="toLogin()">Iniciar sesión o registrarse</button>
+        <button class="green" *ngIf="user._id != ''">¡Ya estas logueado!</button>
+    </div>
+    <div class="contenedores_grandes">
+        <img src="imagen_fondo_inicio.png" loading="lazy" alt="">
+    </div>
+</section>
+<section class="secondSeccion">
+    <div class="contenedores_titulo">
+        <h2>Categorias</h2>
+    </div>
+    <div class="contenedores_categoria_circulos">
+        <div class="carta" (click)="getByCategory('1')">
+            <div class="circulo">
+                <img src="categoría_tecnologia.png" loading="lazy" alt="">
+            </div>
+            <h4>Tecnología</h4>
+        </div>
+        <div class="carta" (click)="getByCategory('2')">
+            <div class="circulo">
+                <img src="categoría_cosmeticos.png" loading="lazy" alt="" >
+            </div>
+            <h4>Cosméticos</h4>
+        </div>
+        <div class="carta" (click)="getByCategory('3')">
+            <div class="circulo">
+                <img src="categoría_electrodomesticos.jpg" loading="lazy" alt="">
+            </div>
+            <h4>Electrodomesticos</h4>
+        </div>
+        <div class="carta" (click)="getByCategory('4')">
+            <div class="circulo">
+                <img src="categoría_decoraciones.jpg" loading="lazy" alt="">
+            </div>
+            <h4>Decoraciones</h4>
+        </div>
+    </div>
+</section>
+<section class="thirtSeccion">
+    <div class="contenedores_titulo">
+        <h2>Productos</h2>
+        <button class="red" (click)="getProducts()">Sin filtro</button>
+    </div>
+    <div class="contenedores_productos">
+        <ng-container *ngIf="products.length != 0" >
+            <div class="carta_producto" *ngFor="let product of products; let i = index" (click)="modalOpen('modal', 'boxModal', i)">
+                <div class="carta_imagen">
+                    <img [src]="'http://localhost:3000/public/images/' + product.img" loading="lazy" alt="">
+                </div>
+                <div class="carta_info">
+                    <h3>{{product.name}}</h3>
+                    <p>Media: {{ product.rating }} 🥳</p>
+                    <p>Personas: {{ product.people_who_rate }} 😎</p>
+                    <p>Reseñas: {{ product.reviews?.length }} 😁</p>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="products.length == 0" >
+            <div class="noItems">
+                <img src="carpeta-vacia.png" alt="">
+                <h2>No hay productos disponibles</h2>
+            </div>
+        </ng-container>
+   
+    </div>
+</section>
+
