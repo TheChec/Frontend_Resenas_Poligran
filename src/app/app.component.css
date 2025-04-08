@@ -1,0 +1,233 @@
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: content-box;
+    overflow-x: hidden;
+  }
+  
+  .content {
+    flex: 1;
+  }
+  a{
+    cursor: pointer;
+  }
+nav{
+    background-color: var(--b);
+    color: var(--c1);
+    border-bottom: 5px solid var(--c1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    height: clamp(30px,20vw, 40px);
+    overflow: hidden;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    width: 100%;
+}
+
+.secondNav{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+.secondNav div{
+    display: flex;
+    gap: 20px;
+}
+a{
+    color: var(--w);
+    text-decoration: none;
+    transition: all .2s ease-in;
+}
+a:hover{
+    color: var(--c1);
+    text-decoration: none;
+    transition: all .2s ease;
+}
+.body{
+    height: 100vh;
+    width: 100vw;
+}
+.icon_menu{
+    display: none;
+    cursor: pointer;
+}
+.icon_menu img{
+    width: clamp(30px,50vw,30px);
+    object-fit: contain;
+}
+#sideBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    padding: 50px 25px 0 25px;
+    background-color: var(--b);
+    flex-direction: column;
+    gap: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(-100%);
+    opacity: 0;
+    display: none;
+    z-index: 500;
+}
+#sideBar p {
+    color: var(--c1);
+}
+#sideBar.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+}
+footer{
+    background-color: var(--b);
+    color: var(--c1);
+    border-top: 5px solid var(--c1);
+    padding: 30px 20px;
+    height: fit-content;
+    width: 100vw;
+    box-sizing: border-box; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.seccion_footer{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.seccion_footer2{
+    margin: 0 auto;
+}
+.icons_red_social{
+    width: 24px;
+    object-fit: cover;
+}
+.corte{
+    display: flex;
+    flex-direction: column;
+    width: clamp(200px, 50vw, 300px);
+    gap: 20px;
+}
+.corte div{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.home_click{
+    cursor: pointer;
+}
+.modal{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 600;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.boxModal{
+    width: 50vw;
+    background-color: var(--w);
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: content-box;
+    gap: 30px;
+    transition: all .5s ease;
+}
+
+/* Animación al abrir */
+.animacion_modal {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: mostrarModal 0.4s forwards ease-out;
+  }
+  
+  @keyframes mostrarModal {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Animación al cerrar */
+  .ocultar_modal {
+    animation: ocultarModal 0.3s forwards ease-in;
+  }
+  
+  @keyframes ocultarModal {
+    to {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+  
+.closeOption{
+    width: 100%;
+    text-align: end;
+    font-weight: 800;
+}
+.closeOption p{
+    cursor: pointer;
+}
+.navProducts{
+    display: flex;
+    width: 100%;
+    flex-flow: wrap row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center; 
+}
+.contenedor_inputs form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+.contenedor_inputs form div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: clamp(250px, 50vw, 300px);
+}
+
+#eliminar_producto{
+    display: none;
+}
+@media (max-width: 800px) {
+   .navA{
+    display: none;
+   }
+   .icon_menu{
+    display: block;
+   }
+   .seccion_footer{
+    gap: 50px;
+    flex-flow: wrap row; 
+    flex-direction: column;
+   }
+   .boxModal{
+    width: 60vw;
+   }
+}
+  
