@@ -6,6 +6,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   { path: 'inicio_de_sesion', component: LoginComponent },
   { path: 'inicio', component: HomeComponent },
   { path: 'contacto', component: ContactComponent },

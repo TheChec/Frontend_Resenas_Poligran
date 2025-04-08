@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    Frontend: "http://localhost:4200/",
+    Frontend: "https://frontend-resenas-poligran.vercel.app/",
     Backend: "https://backend-resenas-poligran.onrender.com/api"
 }
