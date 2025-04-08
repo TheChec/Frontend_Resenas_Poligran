@@ -8,7 +8,7 @@
         <h2>Publicación</h2>
         <div class="publiBody">
             <div class="publiImg">
-                <img src="http://localhost:3000/public/images/{{selectProduct.img}}" alt="">
+                <img src="https://backend-resenas-poligran.onrender.com/public/images/{{selectProduct.img}}" alt="">
             </div>
             <div class="publiInfo">
                 <h2>{{selectProduct.name}}</h2>
@@ -33,7 +33,7 @@
                     <div class="caja">
                         <div class="comentario" *ngFor="let comment of selectProduct.reviews">
                             <div class="comentarioIMG">
-                                <img src="http://localhost:3000/public/images/{{comment.img_user}}" alt="">
+                                <img src="https://backend-resenas-poligran.onrender.com/public/images/{{comment.img_user}}" alt="">
                             </div>
                             <div class="comentarioVerdadero">
                                 <h5>{{comment.name_user}}</h5>
@@ -98,7 +98,7 @@
         <ng-container *ngIf="products.length != 0" >
             <div class="carta_producto" *ngFor="let product of products; let i = index" (click)="modalOpen('modal', 'boxModal', i)">
                 <div class="carta_imagen">
-                    <img [src]="'http://localhost:3000/public/images/' + product.img" loading="lazy" alt="">
+                    <img [src]="'https://backend-resenas-poligran.onrender.com/public/images/' + product.img" loading="lazy" alt="">
                 </div>
                 <div class="carta_info">
                     <h3>{{product.name}}</h3>
