@@ -19,7 +19,7 @@
     flex-direction: column;
 }
 .contenedores_grandes iframe{
-    width: clamp(200px, 50vw, 650px);
+    width: clamp(300px, 50vw, 650px);
     object-fit: cover;
 }
 .contenedores_grandes h2{
@@ -49,3 +49,19 @@ input, textarea{
 textarea{
     height: 150px;
 }
+.corte{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    flex-direction: column;
+}
+
+
+@media (max-width: 800px) {
+    .firstSeccion, .secondSeccion, .thirtSeccion{
+        flex-flow: wrap row;
+    }
+    iframe{
+        width: 100%
+    }
+ }

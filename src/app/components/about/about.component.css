@@ -49,3 +49,14 @@ input, textarea{
 textarea{
     height: 150px;
 }
+
+@media (max-width: 800px) {
+    img{
+     display: none;
+    }
+    .firstSeccion, .secondSeccion, .thirtSeccion{
+        width: 100%;
+        text-align: center;
+ 
+    }
+  }

@@ -94,20 +94,23 @@
   </main>
   <footer *ngIf="showLayout">
     <div class="seccion_footer">
+      <div >
+        <img class="home_click" src="Logotipo.png" (click)="clickRoute(0)"  alt="">
+      </div>
       <div class="corte">
-        <h2>Contacto</h2>
+        <h3>Contacto</h3>
         <p>Carrera 17 #93 - 09 Piso 3 - Bogota D.C - Colombia</p>
         <p>Bogota +57 (601) 343 0000</p>
         <p>servicioalcliente&#64;dtodos.com</p>
       </div>
       <div class="corte">
-        <h2>Explora</h2>
-          <p>¿Quienes comos?</p>
-          <p>Politicas y reglamentos</p>
-          <p>Terminos y condiciones</p>
+        <h3>Explora</h3>
+          <a (click)="clickRoute(3)">¿Quienes comos?</a>
+          <a (click)="clickRoute(3)">Politicas y reglamentos</a>
+          <a (click)="clickRoute(3)">Terminos y condiciones</a>
       </div>
       <div class="corte">
-        <h2>Redes sociales</h2>
+        <h3>Redes sociales</h3>
         <p>No te olvides de seguirnos</p>
         <div>
           <img src="inst.png" alt="" class="icons_red_social">
