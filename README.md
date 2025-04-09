@@ -1,27 +1,29 @@
-# Frontend
+# 🌐 Frontend - Sistema de Reseñas de Productos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.15.
+Este es el **frontend** del sistema de reseñas de productos, desarrollado con **Angular 18**. Permite a los usuarios navegar por productos, ver detalles, dejar reseñas, registrarse e iniciar sesión.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Características
 
-## Code scaffolding
+- Interfaz intuitiva y moderna con Angular.
+- Listado y búsqueda de productos.
+- Filtrado por categoría.
+- Visualización de detalles y reseñas de productos.
+- Formulario de login y registro de usuarios.
+- Administración básica para productos y usuarios.
+- Comunicación directa con el backend vía HTTP.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Tecnologías
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular 18**
+- **TypeScript**
+- **RxJS**
+- **Angular Router**
+- **Vite** como bundler (según lo mencionado previamente)
+- **SweetAlert2** o similar para notificaciones
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
