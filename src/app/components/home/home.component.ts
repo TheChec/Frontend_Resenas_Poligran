@@ -12,6 +12,21 @@ import { UserLocalStorage } from '../../../models/user.model';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
+/**
+ * Componente de Home (HomeComponent)
+ * 
+ * Funcionalidades principales:
+ * ----------------------------------------------------------------
+ * - Carga y muestra todos los productos disponibles desde el backend.
+ * - Permite filtrar productos por categoría.
+ * - Muestra un modal con los detalles del producto seleccionado.
+ * - Permite a los usuarios autenticados dejar una reseña (comentario + estrellas).
+ * - Utiliza formularios reactivos para la recolección de reseñas.
+ * - Carga los datos del usuario autenticado desde el localStorage.
+ * - Usa SweetAlert2 para mostrar notificaciones de éxito o error.
+ * - Incluye una utilidad para obtener el nombre de la categoría desde su ID.
+ * - Controla el scroll del cuerpo cuando los modales están abiertos/cerrados.
+ */
 
 export class HomeComponent implements OnInit {
 

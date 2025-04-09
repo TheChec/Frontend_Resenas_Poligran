@@ -7,13 +7,18 @@ import { Response } from '../models/response.model';
   providedIn: 'root'
 })
 export class LoginService {
-  
-  readonly apiUrl = environment.Backend + 'login'
 
+  // URL de la API para login, se construye usando la variable de entorno del backend
+  readonly apiUrl = environment.Backend + 'login';
+
+  // Se inyecta HttpClient para poder hacer peticiones HTTP al backend
   constructor(private http: HttpClient) { }
 
-  auth(login: UserLogin){
-    return this.http.post<Response<UserLocalStorage>>(this.apiUrl + "/", login)
+  // Método que realiza la autenticación del usuario
+  // Recibe un objeto con las credenciales del usuario (UserLogin)
+  // Retorna un observable con la respuesta tipada que contiene los datos del usuario en localStorage
+  auth(login: UserLogin) {
+    return this.http.post<Response<UserLocalStorage>>(this.apiUrl + "/", login);
   }
 
 }

@@ -10,6 +10,27 @@ import Swal from 'sweetalert2';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+/**
+ * Componente principal de la aplicación (AppComponent).
+ * 
+ * Funcionalidades clave:
+ * --------------------------------------------------------
+ * - Muestra/oculta el layout principal según la ruta (navbar, footer).
+ * - Controla la lógica del menú lateral para navegación móvil.
+ * - Detecta si hay un usuario autenticado guardado en localStorage.
+ * - Gestiona la sesión del usuario: inicio, cierre, redirección.
+ * - Muestra y cierra modales personalizados con animaciones.
+ * - Alterna entre formularios para crear y eliminar productos.
+ * - Usa formularios reactivos (ReactiveForms) para validación y envío.
+ * - Permite a un administrador:
+ *     - Crear nuevos productos (nombre, descripción, categoría, imagen).
+ *     - Eliminar productos existentes seleccionados de una lista.
+ * - Muestra mensajes al usuario mediante SweetAlert (Swal).
+ * - Obtiene la lista de productos desde el backend al iniciar.
+ */
+
+
 export class AppComponent implements OnInit {
 
   routes: string[] = ['/inicio', '/inicio_de_sesion', '/contacto', '/quienes_somos']

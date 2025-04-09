@@ -8,45 +8,51 @@ import { environment } from '../environments/environments';
 })
 export class ProductService {
 
-  readonly apiUrl = environment.Backend + 'products'
+  // URL base de la API para productos, construida a partir del entorno
+  readonly apiUrl = environment.Backend + 'products';
 
+  // Se inyecta HttpClient para poder hacer peticiones HTTP
   constructor(private http: HttpClient) { }
 
+  // Método para crear un producto, incluyendo una imagen (archivo)
   postProduct(product: Product, file: File) {
     const formData = new FormData();
-  
+
+    // Se agregan los campos del producto al FormData
     formData.append('name', product.name || '');
     formData.append('description', product.description || '');
     formData.append('category', product.category || '');
     formData.append('img', file?.name);
     formData.append('file', file);
-  
+
+    // Se envía la petición POST con el FormData al backend
     return this.http.post<Response<Product>>(this.apiUrl + '/', formData);
   }
-  
-  getProduct(id: string){
-    return this.http.get<Response<Product>>(this.apiUrl + `/${id}`)
+
+  // Obtiene un producto por su ID
+  getProduct(id: string) {
+    return this.http.get<Response<Product>>(this.apiUrl + `/${id}`);
   }
 
-  getProducts(){
-    return this.http.get<Response<Product[]>>(this.apiUrl + `/`)
+  // Obtiene todos los productos
+  getProducts() {
+    return this.http.get<Response<Product[]>>(this.apiUrl + `/`);
   }
 
-  getProductsByCategory(idcat: string){
-    return this.http.get<Response<Product[]>>(this.apiUrl + `/categoria/${idcat}`)
+  // Obtiene productos filtrados por categoría
+  getProductsByCategory(idcat: string) {
+    return this.http.get<Response<Product[]>>(this.apiUrl + `/categoria/${idcat}`);
   }
 
-  deleteProduct(id: string){
-    return this.http.delete<Response<Product>>(this.apiUrl + `/${id}`)
+  // Elimina un producto por su ID
+  deleteProduct(id: string) {
+    return this.http.delete<Response<Product>>(this.apiUrl + `/${id}`);
   }
 
-  putReview(id: string, review: Review){
-    return this.http.put<Response<Product>>(this.apiUrl + `/review/${id}`, review)
+  // Agrega una reseña a un producto específico
+  putReview(id: string, review: Review) {
+    return this.http.put<Response<Product>>(this.apiUrl + `/review/${id}`, review);
   }
-
 
 }
-
-
-
 

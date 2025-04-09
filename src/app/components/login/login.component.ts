@@ -11,6 +11,23 @@ import { UserLogin, UserLocalStorage, User } from '../../../models/user.model';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
+
+/**
+ * Componente de Login (LoginComponent)
+ * 
+ * Funcionalidades principales:
+ * --------------------------------------------------------
+ * - Ofrece formularios para el inicio de sesión y el registro de usuarios.
+ * - Usa formularios reactivos (`FormGroup`, `FormControl`) con validaciones.
+ * - Valida campos como email, contraseñas coincidentes y seguridad de contraseña.
+ * - Valida la carga obligatoria de archivo (foto de perfil).
+ * - Realiza el registro de un nuevo usuario con su imagen (mediante `UserService`).
+ * - Realiza el inicio de sesión del usuario (`LoginService`) y guarda los datos en `localStorage`.
+ * - Muestra mensajes al usuario mediante `SweetAlert2` (Swal).
+ * - Controla visualmente el cambio entre formulario de login y formulario de registro con animaciones dinámicas.
+ */
+
+
 export class LoginComponent implements OnInit {
 
   constructor( 
